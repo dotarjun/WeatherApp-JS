@@ -12,8 +12,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Title',
-            favicon: './src/assets/images/favicon.ico'
+            title: 'Weather App',
+            favicon: './src/assets/images/favicon.svg'
         }),
     ],
     module: {
