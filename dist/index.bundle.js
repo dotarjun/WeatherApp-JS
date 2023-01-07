@@ -6,12 +6,16 @@
   \**********************/
 /***/ (() => {
 
+
+const appid = '2d1d7bee7e67c10f2199eee77d33b57b';
+
 async function loadJson(url) {
-    let response = await fetch(url);
-    console.log(response);
+    const response = await fetch(url);
+    const weatherJSON = await response.json();
+    console.log(weatherJSON);
 }
 
-loadJson("https://api.openweathermap.org/data/2.5/weather?q=Delhi&APPID=2d1d7bee7e67c10f2199eee77d33b57b")
+loadJson(`https://api.openweathermap.org/data/2.5/weather?q=Delhi&APPID=${appid}`);
 
 /***/ })
 
@@ -21,4 +25,4 @@ loadJson("https://api.openweathermap.org/data/2.5/weather?q=Delhi&APPID=2d1d7bee
 /******/ var __webpack_exports__ = (__webpack_exec__("./src/index.js"));
 /******/ }
 ]);
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguYnVuZGxlLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBQUE7QUFDQTtBQUNBO0FBQ0E7O0FBRUEiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly93ZWF0aGVyYXBwLWpzLy4vc3JjL2luZGV4LmpzIl0sInNvdXJjZXNDb250ZW50IjpbImFzeW5jIGZ1bmN0aW9uIGxvYWRKc29uKHVybCkge1xuICAgIGxldCByZXNwb25zZSA9IGF3YWl0IGZldGNoKHVybCk7XG4gICAgY29uc29sZS5sb2cocmVzcG9uc2UpO1xufVxuXG5sb2FkSnNvbihcImh0dHBzOi8vYXBpLm9wZW53ZWF0aGVybWFwLm9yZy9kYXRhLzIuNS93ZWF0aGVyP3E9RGVsaGkmQVBQSUQ9MmQxZDdiZWU3ZTY3YzEwZjIxOTllZWU3N2QzM2I1N2JcIikiXSwibmFtZXMiOltdLCJzb3VyY2VSb290IjoiIn0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguYnVuZGxlLmpzIiwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUNBOztBQUVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7O0FBRUEsMEVBQTBFLE1BQU0iLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly93ZWF0aGVyYXBwLWpzLy4vc3JjL2luZGV4LmpzIl0sInNvdXJjZXNDb250ZW50IjpbIlxuY29uc3QgYXBwaWQgPSAnMmQxZDdiZWU3ZTY3YzEwZjIxOTllZWU3N2QzM2I1N2InO1xuXG5hc3luYyBmdW5jdGlvbiBsb2FkSnNvbih1cmwpIHtcbiAgICBjb25zdCByZXNwb25zZSA9IGF3YWl0IGZldGNoKHVybCk7XG4gICAgY29uc3Qgd2VhdGhlckpTT04gPSBhd2FpdCByZXNwb25zZS5qc29uKCk7XG4gICAgY29uc29sZS5sb2cod2VhdGhlckpTT04pO1xufVxuXG5sb2FkSnNvbihgaHR0cHM6Ly9hcGkub3BlbndlYXRoZXJtYXAub3JnL2RhdGEvMi41L3dlYXRoZXI/cT1EZWxoaSZBUFBJRD0ke2FwcGlkfWApOyJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==
