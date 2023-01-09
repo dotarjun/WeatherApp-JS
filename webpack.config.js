@@ -4,8 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        index: './src/index.js',
+        index: './src2/index.js',
+        form: './src/form.js',
     },
+
     devtool: 'inline-source-map',
     devServer: {
         static: './dist',
@@ -13,6 +15,7 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Weather App',
+            template: './src/index.html',
             favicon: './src/assets/images/favicon.svg'
         }),
     ],
