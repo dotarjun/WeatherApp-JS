@@ -4,8 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     mode: 'development',
     entry: {
-        index: './src2/index.js',
+        index: './src/index.js',
         form: './src/form.js',
+        config: './src/config.js',
+        loadJson: './src/loadJson.js',
     },
 
     devtool: 'inline-source-map',
