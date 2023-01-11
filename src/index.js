@@ -1,3 +1,4 @@
+import "./style.css";
 import { createForm } from "./form.js";
 
 

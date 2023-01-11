@@ -13,7 +13,7 @@ export function createForm() {
 
         locationInput = input.value;
         input.value = '';
-        
+
         console.log(locationInput)
         loadJson(`https://api.openweathermap.org/data/2.5/weather?q=${locationInput}&APPID=${sensitiveData().appid}&units=metric`)
     })
