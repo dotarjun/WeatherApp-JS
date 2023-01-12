@@ -12,12 +12,12 @@ export async function loadJson(url) {
 
 function addInfo(text) {
 
-    // const temp = document.getElementById('info');
+    const temp = document.getElementById('info');
     // const p = document.createElement('p');
-    // temp.textContent = text;
+    temp.textContent = text;
     // document.body.appendChild(p)
 
-    
+
 
 }
 
