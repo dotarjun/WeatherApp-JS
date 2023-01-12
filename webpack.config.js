@@ -8,6 +8,7 @@ module.exports = {
         form: './src/form.js',
         config: './src/config.js',
         loadJson: './src/loadJson.js',
+        weatherImages: './src/weatherImages.js',
     },
 
     devtool: 'inline-source-map',
@@ -18,11 +19,15 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Weather App',
             template: './src/index.html',
-            favicon: './src/assets/images/favicon.png'
+            favicon: './src/assets/favicon.ico'
         }),
     ],
     module: {
         rules: [
+            {
+                test: /\.html$/i,
+                loader: "html-loader",
+            },
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
