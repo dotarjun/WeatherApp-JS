@@ -22,8 +22,8 @@ import snowfall from "./assets/images/weatherIcons/snow_snowflake_cloud_weather_
 import snowflake from "./assets/images/weatherIcons/weather_winter_snow_forecast_snowflake_snowy.png";
 
 
-import { loadJson } from "./loadJson.js";
-
+// import { loadJson } from "./loadJson.js";
+import { createForm } from "./form.js";
 
 
 const time = new Date();
@@ -32,9 +32,9 @@ console.log(time);
 
 async function updateImage() {
     const img = document.getElementById('weather-image');
-    const jsondata = loadJson.weatherData;
-    // const description = await jsondata.weather[0]
-    console.log(`Data ${jsondata}`);
+    // const jsondata = await createForm().weatherData;
+    const description = await createForm().jsonData.weather[0]
+    // console.log(`Data ${jsondata}`);
 }
 
 function getWeatherIcon(desc) {

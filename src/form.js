@@ -1,19 +1,27 @@
-import { loadJson } from "./loadJson.js";
+import { sensitiveData } from "./config.js";
+
+let locationInput = 'Delhi'
+
+async function loadJson() {
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locationInput}&APPID=${sensitiveData().appid}&units=metric`);
+    const weatherJSON = await response.json();
+    await console.log(weatherJSON);
+    return { weatherJSON };
+}
 
 export function createForm() {
     const form = document.querySelector('form');
     const input = form.querySelector('input');
-    const inputVal = input.value;
-    // loadJson()
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-
-        console.log(inputVal);
-        // console.log(loadJson().locationInput)
-        loadJson()
-        // console.log(loadJson().weatherJSON);
-        return {
-            inputVal
-        }
+        const inputVal = input.value;
+        inputVal == '' ? locationInput = 'Delhi' : locationInput = inputVal;
+        const jsonData = loadJson().weatherJSON
+        return jsonData;
     })
+}
+
+function addInfo(text) {
+    const temp = document.getElementById('info');
+    temp.textContent = text;
 }
