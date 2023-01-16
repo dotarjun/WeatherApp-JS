@@ -1,10 +1,15 @@
-import { updateImage } from "./weatherImages.js";
+import { sensitiveData } from "./config.js";
+import { createForm } from "./form.js";
 
-export async function loadJson(url) {
-    const response = await fetch(url);
+export async function loadJson() {
+    let locationInput = 'Delhi'
+
+    createForm().inputVal == '' ? locationInput = 'Delhi' : locationInput = createForm().inputVal;
+
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locationInput}&APPID=${sensitiveData().appid}&units=metric`);
     const weatherJSON = await response.json();
-    await addInfo(`Temperature in ${weatherJSON.name}, ${weatherJSON.sys.country} is ${weatherJSON.main.temp} C. ${weatherJSON.weather[0].description} Visibility: ${weatherJSON.visibility / 1000}Km `);
     console.log(weatherJSON);
+    return { weatherJSON, locationInput };
 }
 
 function addInfo(text) {

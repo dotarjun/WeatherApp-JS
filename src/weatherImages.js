@@ -22,10 +22,24 @@ import snowfall from "./assets/images/weatherIcons/snow_snowflake_cloud_weather_
 import snowflake from "./assets/images/weatherIcons/weather_winter_snow_forecast_snowflake_snowy.png";
 
 
+import { loadJson } from "./loadJson.js";
 
-export function updateImage(image) {
+
+
+const time = new Date();
+console.log(time);
+
+
+async function updateImage() {
     const img = document.getElementById('weather-image');
-    img.src = image
+    const jsondata = loadJson.weatherData;
+    // const description = await jsondata.weather[0]
+    console.log(`Data ${jsondata}`);
 }
 
-updateImage(nightCloud)
+function getWeatherIcon(desc) {
+
+}
+
+
+updateImage()
