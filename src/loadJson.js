@@ -3,12 +3,13 @@ import { createForm } from "./form.js";
 
 export async function loadJson() {
     let locationInput = 'Delhi'
-
-    createForm().inputVal == '' ? locationInput = 'Delhi' : locationInput = createForm().inputVal;
+    console.log(createForm);
+    createForm().inputVal == '' ? locationInput = 'Delhi' : locationInput = createForm.inputVal;
+    console.log(createForm.inputVal);
 
     const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${locationInput}&APPID=${sensitiveData().appid}&units=metric`);
     const weatherJSON = await response.json();
-    console.log(weatherJSON);
+    console.log(weatherJSON + response);
     return { weatherJSON, locationInput };
 }
 
