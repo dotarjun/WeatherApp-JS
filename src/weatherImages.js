@@ -30,16 +30,16 @@ const time = new Date();
 console.log(time);
 
 
-async function updateImage() {
+export async function updateImage() {
     const img = document.getElementById('weather-image');
     // const jsondata = await createForm().weatherData;
-    const description = await createForm().jsonData.weather[0]
+    const formData = await createForm()
     // console.log(`Data ${jsondata}`);
+    console.log(formData);
+    const description = formData.weather[0].description;
+    console.log(description);
 }
 
 function getWeatherIcon(desc) {
 
 }
-
-
-updateImage()
