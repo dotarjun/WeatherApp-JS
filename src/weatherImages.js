@@ -29,17 +29,6 @@ import { createForm } from "./form.js";
 const time = new Date();
 console.log(time);
 
-
-export async function updateImage() {
-    const img = document.getElementById('weather-image');
-    // const jsondata = await createForm().weatherData;
-    const formData = await createForm()
-    // console.log(`Data ${jsondata}`);
-    console.log(formData);
-    const description = formData.weather[0].description;
-    console.log(description);
-}
-
 function getWeatherIcon(desc) {
 
 }

@@ -1,8 +1,22 @@
 import { sensitiveData } from "./config.js";
-import { updateImage } from "./weatherImages.js";
+// import { updateImage } from "./weatherImages.js";
 // import { updateImage } from "./weatherImages.js";
 
 let locationInput = 'Delhi'
+
+
+async function updateImage() {
+    const img = document.getElementById('weather-image');
+    // const jsondata = await createForm().weatherData;
+    const formData = await createForm()
+    // console.log(`Data ${jsondata}`);
+    console.log(formData);
+    const description = formData.weather[0].description;
+    console.log(description);
+}
+
+
+
 
 export function createForm() {
     const form = document.querySelector('form');
