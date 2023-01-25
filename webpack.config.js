@@ -8,7 +8,7 @@ module.exports = {
         form: './src/form.js',
         config: './src/config.js',
         loadJson: './src/loadJson.js',
-        weatherImages: './src/weatherImages.js',
+        // weatherImages: './src/weatherImages.js',
     },
 
     devtool: 'inline-source-map',
